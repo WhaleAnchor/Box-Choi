@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 import { auth, db, logout } from "../firebase/firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
+import Navbar from "./Navbar";
 
 import img from "../assets/logo.JPG";
 
@@ -31,7 +32,9 @@ function Dashboard() {
     }, [user, loading]);
 
     return (
+        
         <div className="dashboard">
+        <Navbar />
         <div className="dashboard__container">
             Logged in as
 

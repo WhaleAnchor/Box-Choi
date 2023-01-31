@@ -1,71 +1,91 @@
 import React, { useState, useEffect } from "react";
+import { collection, addDoc, updateDoc, deleteDoc, query, orderBy, onSnapshot } from "firebase/firestore";
 import {db} from "../firebase/firebase";
-import {collection, query, getDocs, addDoc} from "firebase/firestore"
 
 const Inventory = () => {
-  // State to store the inventory items
-  const [items, setItems] = useState([]);
+  const [boxes, setBoxes] = useState([]);
+  const [formData, setFormData] = useState({
+    length: "",
+    width: "",
+    height: "",
+    price: "",
+  });
 
-  // Use effect to fetch the inventory items from Firestore
   useEffect(() => {
-    const fetchItems = async () => {
-      const itemCollection = collection(db, "items");
-      const itemQuery = await query(itemCollection);
-      const itemDocs = await getDocs(itemQuery);
-      setItems(itemDocs.docs.map((doc) => doc.data()));
-    };
-    fetchItems();
-  }, []);
+    const q = query(collection(db, 'boxes'), orderBy('created', 'desc'))
+    onSnapshot(q, (querySnapshot) => {
+      setBoxes(querySnapshot.docs.map(doc => ({
+        id: doc.id,
+        data: doc.data()
+      })))
+    })
+  },[])
 
-  // Function to add a new item to the inventory
-  const addItem = async (name, quantity) => {
-    try {
-      await addDoc(collection(db, "items"), { name, quantity });
-    } catch (err) {
-      console.error(err);
-      alert(err.message);
-    }
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
   };
 
-  // Function to update an existing item in the inventory
-  const updateItem = async (id, name, quantity) => {
-    try {
-      const itemRef = collection(db, "items").doc(id);
-      await itemRef.update({ name, quantity });
-    } catch (err) {
-      console.error(err);
-      alert(err.message);
-    }
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    // Add the new box to Firestore
+    await addDoc(collection(db, "boxes"), formData);
+    // Clear the form
+    setFormData({
+      length: "",
+      width: "",
+      height: "",
+      price: "",
+    });
   };
 
-  // Function to delete an item from the inventory
-  const deleteItem = async (id) => {
-    try {
-      const itemRef = collection(db, "items").doc(id);
-      await itemRef.delete();
-    } catch (err) {
-      console.error(err);
-      alert(err.message);
-    }
+  const handleUpdate = async (id) => {
+    // Update the box in Firestore
+    await updateDoc(collection(db, "boxes").doc(id), formData);
+  };
+
+  const handleDelete = async (id) => {
+    // Delete the box from Firestore
+    await deleteDoc(collection(db, "boxes").doc(id));
   };
 
   return (
     <div>
       <h1>Inventory</h1>
-      <ul>
-        {items.map((item) => (
-          <li key={item.id}>
-            {item.name}: {item.quantity}
-          </li>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Length:
+          <input type="text" name="length" value={boxes.length} onChange={handleChange} />
+        </label>
+        <label>
+          Width:
+          <input type="text" name="width" value={boxes.width} onChange={handleChange} />
+        </label>
+        <label>
+          Height:
+          <input type="text" name="height" value={boxes.height} onChange={handleChange} />
+        </label>
+        <label>
+          Price:
+          <input type="text" name="price" value={boxes.price} onChange={handleChange} />
+        </label>
+        <button type="submit">Add Box</button>
+      </form>
+      <div>
+        {boxes.map((box) => (
+          <div key={box.id}>
+            <p>Length: {box.length}</p>
+            <p>Width: {box.width}</p>
+            <p>Height: {box.height}</p>
+            <p>Price: {box.price}</p>
+            <button onClick={() => handleUpdate(box.id)}>Update</button>
+            <button onClick={() => handleDelete(box.id)}>Delete</button>
+          </div>
         ))}
-      </ul>
-      <button onClick={() => addItem("New Item", 1)}>Add Item</button>
-      <button onClick={() => updateItem("itemId", "Updated Item", 2)}>
-        Update Item
-      </button>
-      <button onClick={() => deleteItem("itemId")}>Delete Item</button>
+      </div>
     </div>
   );
 };
 
 export default Inventory;
+        
