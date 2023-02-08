@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import './Navbar.css'
-import Logo from '../assets/logo.png'
+import Logo from '../assets/logo.jpg'
 
 // firebase imports
 import { useAuthState } from "react-firebase-hooks/auth";
