@@ -23,7 +23,7 @@ function Register() {
 
     useEffect(() => {
         if (loading) return;
-        if (user) history.replace("/dashboard");
+        if (user) history.replace("/inventory");
     }, [user, loading]);
 
     return (
