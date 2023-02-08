@@ -5,18 +5,17 @@ import {db} from "../firebase/firebase";
 // material ui imports
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import TextField from '@mui/material/TextField';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import ClearIcon from '@mui/icons-material/Clear';
-
-
-
-
 
 const Inventory = () => {
 
@@ -36,6 +35,8 @@ const Inventory = () => {
     const getBoxes = async () => {
       const data = await getDocs(boxesColRef);
       setBoxes(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
+
+    console.log(data)
     };
     getBoxes();
   }, []);
@@ -73,56 +74,88 @@ const Inventory = () => {
   };
 
   return (
-    <div>
-      <h1>Inventory</h1>
-        <input 
-          placeholder="Length"
+    <div className="inventoryWrapper">
+        <Grid container rowSpacing={1} display="flex" justifyContent="center">
+        <Box
+          component="form"
+          sx={{
+            '& > :not(style)': { m: 1, width: '8ch' },
+          }}
+          noValidate
+          autoComplete="off"
           onChange={(event) => {
             setNewBoxLength(event.target.value);
+            }}
+        >
+          <TextField id="outlined-basic" label="Length" variant="outlined" />
+        </Box>
+        <Box
+          component="form"
+          sx={{
+            '& > :not(style)': { m: 1, width: '8ch' },
           }}
-        />
-
-        <input 
-          placeholder="Width"
+          noValidate
+          autoComplete="off"
           onChange={(event) => {
             setNewBoxWidth(event.target.value);
+            }}
+        >
+          <TextField id="outlined-basic" label="Width" variant="outlined" />
+        </Box>
+        <Box
+          component="form"
+          sx={{
+            '& > :not(style)': { m: 1, width: '8ch' },
           }}
-        />
-
-        <input 
-          placeholder="Height"
+          noValidate
+          autoComplete="off"
           onChange={(event) => {
             setNewBoxHeight(event.target.value);
+            }}
+        >
+          <TextField id="outlined-basic" label="Height" variant="outlined" />
+        </Box>
+        <Box
+          component="form"
+          sx={{
+            '& > :not(style)': { m: 1, width: '8ch' },
           }}
-        />
-
-        <input 
-          placeholder="Price"
+          noValidate
+          autoComplete="off"
           onChange={(event) => {
-            setNewBoxPrice(event.target.value);
+              setNewBoxPrice(event.target.value);
+            }}
+        >
+          <TextField id="outlined-basic" label="Price" variant="outlined" />
+        </Box>
+        <Box
+          component="form"
+          sx={{
+            '& > :not(style)': { m: 1, width: '9ch' },
           }}
-        />
-
-        <input 
-        type="number"
-          placeholder="Amount"
+          noValidate
+          autoComplete="off"
           onChange={(event) => {
-            setNewBoxAmount(event.target.value);
-          }}
-        />
-
-        <button onClick={addBox}>Add Box</button>
+              setNewBoxAmount(event.target.value);
+            }}
+        >
+          <TextField id="outlined-basic" label="Amount" variant="outlined" />
+        </Box>
+        <Stack spacing={2} direction="row">
+          <Button variant="text" onClick={addBox}>Add Box</Button>
+         </Stack>
+        </Grid>
 
       <div>
         {boxes.map((boxes) => {
-          return <Card sx={{ display: 'flex' }}>
-          <Box sx={{ display: 'flex', flexDirection: 'row' }}>
+          return <Card key={boxes.id} sx={{ display: 'flex' }}>
+          <Box sx={{ display: 'flex', flexDirection: 'row'}}>
 
           {/* Box name and description */}
           <CardContent sx={{ flex: '1 0 auto' }}>
             {/* box name */}
-            <Typography component="div" variant="h5">
-            {boxes.boxlength}x{boxes.boxwidth}x{boxes.boxheight}
+            <Typography component="div" variant="h4">
+              {boxes.boxlength}x{boxes.boxwidth}x{boxes.boxheight}
             </Typography>
             {/* box description */}
             <Typography variant="subtitle1" color="text.secondary" component="div">
