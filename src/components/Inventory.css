@@ -1,0 +1,35 @@
+.inventoryWrapper {
+    display: flex;
+    flex-direction: row;
+    width:30%, 20%, 50%;
+    justify-content: center;
+    align-items: center;
+}
+.inputGrid {
+    display: flex;
+    flex-direction: column;
+    place-self: left;
+    width:25%;
+    height:10vh;
+    padding:15px;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid rgb(96, 140, 189);
+    border-radius: 15px;
+    margin: 25px;
+}
+
+.inventoryCards {
+    border: 3px solid rgb(66, 181, 102);
+    width:25vw;
+    margin-left: 10vw;
+}
+
+.inventory {
+    margin:25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}

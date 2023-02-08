@@ -6,7 +6,6 @@ import { auth, db, logout } from "../firebase/firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
 import Navbar from "./Navbar";
 
-import img from "../assets/logo.JPG";
 
 function Dashboard() {
     const [user, loading, error] = useAuthState(auth);
@@ -45,9 +44,6 @@ function Dashboard() {
             <button className="dashboard__btn" onClick={logout}>
                 Logout
             </button>
-            <div>
-                <img src={img} className="img"></img>
-            </div>
         </div>
         </div>
     );
