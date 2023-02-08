@@ -22,7 +22,7 @@ import {
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyBDF3BbSzPjfYasiIKlajC6wtzOvWKBCTI",
-  authDomain: "box-choy-4524d.firebaseapp.com",
+  authDomain: "boxchoi.herokuapp.com",
   projectId: "box-choy-4524d",
   storageBucket: "box-choy-4524d.appspot.com",
   messagingSenderId: "480450845094",
