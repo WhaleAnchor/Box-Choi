@@ -8,6 +8,7 @@ const InventoryPage = () => {
     return (
         <>
             <Navbar />
+            <Inventory />
             <Inventory2 />
         </>
     )

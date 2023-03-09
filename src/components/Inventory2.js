@@ -41,7 +41,12 @@ export function Inventory2() {
         window.location.reload(false);
     };
 
-  
+    // Delete Materials
+    const deleteMaterials = async (id) => {
+      await deleteDoc(doc(db, "materials", id));
+      window.location.reload(false);
+    }
+
     const columns = [
         {
             field: 'delete',
@@ -83,8 +88,18 @@ export function Inventory2() {
 
 
     const materialColumn = [
+      {
+        field: 'delete',
+        headerName: '',
+        width: 60,
+        renderCell: (params) => (
+        <IconButton onClick={() => deleteMaterials(params.id)}>
+            <DeleteIcon />
+        </IconButton>
+        ),
+    },
       { field: 'materialName', headerName: 'Material Name', width: 150 },
-      { field: 'materialCount', headerName: 'Quantity', width: 80 },
+      { field: 'materialCount', headerName: 'Quantity', width: 150 },
     ]
   
     useEffect(() => {
