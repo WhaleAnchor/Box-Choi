@@ -1,0 +1,12 @@
+.Row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.firestoreBoxes {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    align-self: right;
+}

@@ -2,8 +2,9 @@
     display: flex;
     flex-direction: row;
     width:30%, 20%, 50%;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    
 }
 .inputGrid {
     display: flex;
