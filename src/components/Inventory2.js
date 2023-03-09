@@ -98,7 +98,7 @@ export function Inventory2() {
         </IconButton>
         ),
     },
-      { field: 'materialName', headerName: 'Material Name', width: 150 },
+      { field: 'materialName', headerName: 'Material Name', width: 200 },
       { field: 'materialCount', headerName: 'Quantity', width: 150 },
     ]
   
@@ -128,7 +128,12 @@ export function Inventory2() {
       <div className="Row">
 
         <div  className="firestoreBoxes">
-          <div style={{ height:500, width:820}}>
+          <div className="title">
+            <h1>
+              Boxes
+            </h1>
+          </div>
+          <div style={{ height:500, width:822}}>
             <DataGrid
               rows={rows}
               columns={columns}
@@ -138,8 +143,13 @@ export function Inventory2() {
           </div>
         </div>
 
-        <div  className="firestoreMaterials">
-          <div style={{ height:500, width:500}}>
+        <div  className="firestoreBoxes">
+          <div className="title">
+            <h1>
+              Packing Materials
+            </h1>
+          </div>
+          <div style={{ height:500, width:600}}>
             <DataGrid
               rows={materialRows}
               columns={materialColumn}
