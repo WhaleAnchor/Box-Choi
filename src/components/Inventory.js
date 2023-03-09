@@ -78,8 +78,6 @@ const Inventory = () => {
     
     <div className="inventoryWrapper">
         <Grid className="inputGrid">
-
-        
           {/* Input form for boxes */}
           <Box
             component="form"
@@ -140,57 +138,6 @@ const Inventory = () => {
             <Button variant="text" onClick={addBox}>Add Box</Button>
           </Stack>
         </Grid>
-
-      {/* Where all the inventory is listed */}
-      <div className="inventory">
-        {boxes.map((boxes) => {
-          return <Card key={boxes.id} sx={{ display: 'flex' }} className="inventoryCards">
-          <Box sx={{ display: 'flex', flexDirection: 'row'}}>
-
-          {/* Box name and description */}
-          <CardContent sx={{ flex: '1 0 auto' }}>
-            {/* box name */}
-            <Typography component="div" variant="h4">
-              {boxes.boxlength}x{boxes.boxwidth}x{boxes.boxheight}
-            </Typography>
-            {/* box description */}
-            <Typography variant="subtitle1" color="text.secondary" component="div">
-              Price: ${boxes.boxprice} <br></br>
-              Amount: {boxes.boxamount} <br></br>
-              
-            </Typography>
-          </CardContent>
-
-          {/* Box icon controls */}
-          <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
-            {/* Box add */}
-            <IconButton aria-label="add" onClick={() => {
-                updateBox(boxes.id, boxes.boxamount);
-              }}>
-              {theme.direction === 'rtl' ? <AddIcon /> : <AddIcon />}
-            </IconButton>
-            
-            {/* Box minus */}
-            <IconButton aria-label="remove" onClick={() => {
-                minusBox(boxes.id, boxes.boxamount);
-              }}>
-              {theme.direction === 'rtl' ? <RemoveIcon /> : <RemoveIcon />}
-            </IconButton>
-            
-            {/* Box delete */}
-            <IconButton aria-label="clear" onClick={() => {
-                deleteBox(boxes.id);
-              }}>
-              {theme.direction === 'rtl' ? <ClearIcon /> : <ClearIcon />}
-            </IconButton>
-
-          </Box>
-          
-        </Box>
-        
-      </Card>
-        })}
-      </div>
       
     </div>
   );

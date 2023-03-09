@@ -11,3 +11,7 @@
     margin-right: 10px;
     display: flex;
 }
+
+#button:hover {
+    text-decoration: underline;
+}
