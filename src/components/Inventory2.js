@@ -162,11 +162,11 @@ export function Inventory2() {
 
   // Toggle tables
   const handleShowBoxes = () => {
-    setShowBoxes(true);
+    setShowBoxes((prev) => !prev);
     setShowMaterials(false);
   };
   const handleShowMaterials = () => {
-    setShowMaterials(true);
+    setShowMaterials((prev) => !prev);
     setShowBoxes(false);
   };
   
