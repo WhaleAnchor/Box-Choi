@@ -19,11 +19,14 @@
     border-radius: 15px;
     margin: 10px;
     overflow: hidden;
+    background-color: white;
 }
 .inputFields {
     display: flex;
 }
-
+.css-e53awj-MuiStack-root {
+    background-color: white;
+}
 @media (max-width: 600px) {
     .inventoryWrapper {
         display:flex;
