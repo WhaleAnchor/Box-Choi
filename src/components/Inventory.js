@@ -62,11 +62,11 @@ const Inventory = () => {
   
   // Toggle input tables
   const handleShowAddBoxes = () => {
-    setShowAddBoxes(true);
+    setShowAddBoxes((prev) => !prev);
     setShowAddMaterials(false);
   };
   const handleShowAddMaterials = () => {
-    setShowAddMaterials(true);
+    setShowAddMaterials((prev) => !prev);
     setShowAddBoxes(false);
   };
 
