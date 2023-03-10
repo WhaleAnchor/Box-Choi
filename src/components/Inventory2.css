@@ -53,7 +53,7 @@ h1 {
         align-self: left;
         margin:10px;
         width:100%;
-        overflow:scroll;
+        overflow:hidden;
     }
 
 }
