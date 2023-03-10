@@ -44,27 +44,30 @@ const Inventory = () => {
     
     <div className="inventoryWrapper">
        <Grid className="inputGrid">
-          <Box component="form" sx={boxStyles} noValidate autoComplete="off">
-            <TextField id="outlined-basic" label="Length" variant="outlined" onChange={(event) => setNewBoxLength(event.target.value)} />
-          </Box>
-          <Box component="form" sx={boxStyles} noValidate autoComplete="off">
-            <TextField id="outlined-basic" label="Width" variant="outlined" onChange={(event) => setNewBoxWidth(event.target.value)} />
-          </Box>
-          <Box component="form" sx={boxStyles} noValidate autoComplete="off">
-            <TextField id="outlined-basic" label="Height" variant="outlined" onChange={(event) => setNewBoxHeight(event.target.value)} />
-          </Box>
-          <Box component="form" sx={boxStyles} noValidate autoComplete="off">
-            <TextField id="outlined-basic" label="Price" variant="outlined" onChange={(event) => setNewBoxPrice(event.target.value)} />
-          </Box>
-          <Box component="form" sx={{ '& > :not(style)': { m: 1, width: '9ch' } }} noValidate autoComplete="off">
-            <TextField id="outlined-basic" label="Quantity" variant="outlined" onChange={(event) => setNewBoxQuantity(event.target.value)} />
-          </Box>
-          <Stack spacing={2} direction="row">
-            <Button variant="text" onClick={addBox}>Add Box</Button>
-          </Stack>
-        </Grid>
+        <div className="inputFields">
+            <Box component="form" sx={boxStyles} noValidate autoComplete="off">
+              <TextField id="outlined-basic" label="Length" variant="outlined" onChange={(event) => setNewBoxLength(event.target.value)} />
+            </Box>
+            <Box component="form" sx={boxStyles} noValidate autoComplete="off">
+              <TextField id="outlined-basic" label="Width" variant="outlined" onChange={(event) => setNewBoxWidth(event.target.value)} />
+            </Box>
+            <Box component="form" sx={boxStyles} noValidate autoComplete="off">
+              <TextField id="outlined-basic" label="Height" variant="outlined" onChange={(event) => setNewBoxHeight(event.target.value)} />
+            </Box>
+            <Box component="form" sx={boxStyles} noValidate autoComplete="off">
+              <TextField id="outlined-basic" label="Price" variant="outlined" onChange={(event) => setNewBoxPrice(event.target.value)} />
+            </Box>
+            <Box component="form" sx={{ '& > :not(style)': { m: 1, width: '9ch' } }} noValidate autoComplete="off">
+              <TextField id="outlined-basic" label="Quantity" variant="outlined" onChange={(event) => setNewBoxQuantity(event.target.value)} />
+            </Box>
+            <Stack spacing={2} direction="row">
+              <Button variant="text" onClick={addBox}>Add Box</Button>
+            </Stack>
+          </div>
+      </Grid>
 
-        <Grid className="inputGrid">
+      <Grid className="inputGrid">
+        <div className="inputFields">
           <Box component="form" sx={boxStyles} noValidate autoComplete="off">
             <TextField id="outlined-basic" label="Name" variant="outlined" onChange={(event) => setnNewMaterialName(event.target.value)} />
           </Box>
@@ -74,10 +77,8 @@ const Inventory = () => {
           <Stack spacing={2} direction="row">
             <Button variant="text" onClick={addMaterials}>Add Materials</Button>
           </Stack>
-        </Grid>
-
-        
-      
+        </div>
+      </Grid>
     </div>
   );
 };

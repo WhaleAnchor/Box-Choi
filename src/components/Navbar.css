@@ -16,12 +16,3 @@
     text-decoration: underline;
 }
 
-/* Mobile Styles */
-@media (max-wiidth: 599px) {
-    .navbarWrapper {
-        flex-direction: column;
-    }
-    .logo {
-        width: 5px;
-    }
-}

@@ -48,7 +48,7 @@ function Navbar() {
 
 
   return (
-    <AppBar position="static" className='navbarWrapper'>
+    <AppBar className='navbarWrapper'>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
         <img src={Logo} className="logo"/>
