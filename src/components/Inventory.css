@@ -1,8 +1,8 @@
 .inventoryWrapper {
     display: flex;
     flex-direction: row;
-    justify-content: left;
-    align-items: left;
+    justify-content: center;
+    align-items: center;
     margin-top: 80px;
     
 }

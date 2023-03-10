@@ -55,22 +55,22 @@ export function Inventory2() {
         {
             field: 'delete',
             headerName: '',
-            width: 60,
+            width: 10,
             renderCell: (params) => (
             <IconButton onClick={() => deleteBox(params.id)}>
                 <DeleteIcon />
             </IconButton>
             ),
         },
-        { field: 'boxlength', headerName: 'Length', width: 80 },
-        { field: 'boxwidth', headerName: 'Width', width: 80 },
-        { field: 'boxheight', headerName: 'Height', width: 200 },
-        { field: 'boxprice', headerName: 'Price', width: 200 },
-        { field: 'boxquantity', headerName: 'Quantity', width: 80 },
+        { field: 'boxlength', headerName: 'L', width: 30 },
+        { field: 'boxwidth', headerName: 'W', width: 30 },
+        { field: 'boxheight', headerName: 'H', width: 60 },
+        { field: 'boxprice', headerName: 'Price', width: 60 },
+        { field: 'boxquantity', headerName: '#', width: 30 },
         {
             field: 'Add',
             headerName: 'Add',
-            width: 50,
+            width: 30,
             renderCell: (params) => (
             <IconButton onClick={() => {addBox(params.id, params.row.boxquantity) }}>
                 <AddIcon />
@@ -79,8 +79,8 @@ export function Inventory2() {
         },
         {
             field: 'Delete',
-            headerName: 'Delete',
-            width: 70,
+            headerName: 'Del',
+            width: 30,
             renderCell: (params) => (
                 <IconButton onClick={() => {minusBox(params.id, params.row.boxquantity) }}>
                 <RemoveIcon />
@@ -153,7 +153,7 @@ export function Inventory2() {
                 </Stack>
               </div>
               {showBoxes && (
-                <div style={{ height: 500, width: 822 }}>
+                <div style={{ height: 500, width: 450 }}>
                   <div>
                     <h1>
                       Boxes
@@ -168,7 +168,7 @@ export function Inventory2() {
                 </div>
               )}
               {showMaterials && (
-                <div style={{ height: 500, width: 500 }}>
+                <div style={{ height: 500, width: 450 }}>
                 <div>
                     <h1>
                       Packing Materials
@@ -195,7 +195,7 @@ export function Inventory2() {
               Boxes
             </h1>
           </div>
-          <div style={{ height:500, width:822}}>
+          <div style={{ height:500, width:450}}>
             <DataGrid
               rows={rows}
               columns={columns}
@@ -211,7 +211,7 @@ export function Inventory2() {
               Packing Materials
             </h1>
           </div>
-          <div style={{ height:500, width:500}}>
+          <div style={{ height:500, width:450}}>
             <DataGrid
               rows={materialRows}
               columns={materialColumn}
