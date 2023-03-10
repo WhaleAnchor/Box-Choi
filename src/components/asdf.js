@@ -138,11 +138,8 @@ export function Inventory2() {
       fetchMaterialData();
     }, []);
 
-
-
-    const isSmallScreen = window.innerWidth <= 1760;
     // JSX depending on screen size
-    const SmallScreen = () => (
+    const smallScreen = `
           <div className="Row">
             <div className="firestoreBoxes">
               <div className="title">
@@ -184,49 +181,53 @@ export function Inventory2() {
               )}
             </div>
           </div>
-    );
+      `
     
-    const RegularScreen = () => (
-        <div className="Row">
-
-        <div  className="firestoreBoxes">
+    const regularScreen = `
+    <div className="Row">
+        <div className="firestoreBoxes">
           <div className="title">
-            <h1>
-              Boxes
-            </h1>
-          </div>
-          <div style={{ height:500, width:822}}>
-            <DataGrid
-              rows={rows}
-              columns={columns}
-              pageSize={5}
-              rowsPerPageOptions={[5]}
-            />
-          </div>
-        </div>
+          <Stack spacing={2} direction="row">
+          <Button variant="outlined" onClick={handleShowBoxes}>Boxes</Button>
+          <Button variant="outlined" onClick={handleShowMaterials}> Packing Materials </Button>
 
-        <div  className="firestoreBoxes">
-          <div className="title">
-            <h1>
-              Packing Materials
-            </h1>
+            </Stack>
           </div>
-          <div style={{ height:500, width:500}}>
-            <DataGrid
-              rows={materialRows}
-              columns={materialColumn}
-              pageSize={5}
-              rowsPerPageOptions={[5]}
-            />
-          </div>
+          {showBoxes && (
+            <div style={{ height: 500, width: 822 }}>
+              <div>
+                <h1>
+                  Boxes
+                </h1>  
+              </div>
+              <DataGrid
+                rows={rows}
+                columns={columns}
+                pageSize={5}
+                rowsPerPageOptions={[5]}
+              />
+            </div>
+          )}
+          {showMaterials && (
+            <div style={{ height: 500, width: 500 }}>
+            <div>
+                <h1>
+                  Packing Materials
+                </h1>  
+              </div>
+              <DataGrid
+                rows={materialRows}
+                columns={materialColumn}
+                pageSize={5}
+                rowsPerPageOptions={[5]}
+              />
+            </div>
+          )}
         </div>
       </div>
-    );
-
+    `
     return (
-      <div>
-        {isSmallScreen ? <SmallScreen /> : < RegularScreen/>}
-      </div>
+      {smallScreen}
     );
   };
 

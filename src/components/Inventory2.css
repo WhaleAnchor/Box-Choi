@@ -6,23 +6,23 @@ h1 {
     font-weight: 300;
     font-size: 40px;
     color: #080808;
-    -webkit-transition: all 0.4s ease 0s;
-    -o-transition: all 0.4s ease 0s;
-    transition: all 0.4s ease 0s;
+    display: flex;
+    justify-content: center;
 }
-
 .Row {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
+    margin:10px;
 
 }
 .firestoreBoxes {
     display:flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    align-self: right;
+    margin:10px;
+    overflow: hidden;
+    width:100%
 }
 .title {
     text-align: center;
@@ -30,4 +30,13 @@ h1 {
     font-weight: 700; color:#202020;
     text-transform: uppercase;
     word-spacing: 1px; letter-spacing:2px;
+}
+
+
+@media (max-width: 1760px) {
+    .Row {
+        display:flex;
+        flex-direction: column;
+    }
+
 }

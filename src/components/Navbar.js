@@ -80,17 +80,17 @@ function Navbar() {
           </Box>
 
           {/* U-Line */}
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <Button
-              onClick={ulineHandler}
-              sx={{ my: 2, color: 'white', display: 'block' }}> 
+          <Box sx={{ flexGrow: 0 }}>
+            <Typography title="Open settings">
+              <Button onClick={ulineHandler} sx={{ my: 2, color: 'white', display: 'block'  }}>
               U-Line
-            </Button>
+              </Button>
+            </Typography>
           </Box>
           
           {/* Log Out */}
           <Box sx={{ flexGrow: 0 }}>
-          <Typography title="Open settings">
+            <Typography title="Open settings">
               <Button onClick={logout} sx={{ my: 2, color: 'white', display: 'block'  }}>
               Logout
               </Button>
