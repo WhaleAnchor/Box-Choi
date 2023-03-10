@@ -1,9 +1,9 @@
 .inventoryWrapper {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 80px;
+    margin-top: 100px;
     
 }
 .inputGrid {
@@ -15,7 +15,7 @@
     padding:15px;
     justify-content: center;
     align-items: center;
-    border: 3px solid rgb(96, 140, 189);
+    border: 3px solid rgb(189, 109, 196);
     border-radius: 15px;
     margin: 10px;
     overflow: hidden;
@@ -24,18 +24,10 @@
     display: flex;
 }
 
-@media (max-width: 1260px) {
-    .inventoryWrapper {
-        display:flex;
-        flex-direction: column;
-    }
-
-}
-
 @media (max-width: 600px) {
     .inventoryWrapper {
         display:flex;
-        flex-direction: row;
+        flex-direction: column;
     }
     .inputFields {
         display: flex;

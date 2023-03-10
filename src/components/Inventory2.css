@@ -33,7 +33,7 @@ h1 {
 }
 
 
-@media (max-width: 1760px) {
+@media (max-width: 1260px) {
     .Row {
         display:flex;
         flex-direction: column;

@@ -105,19 +105,6 @@ export function Inventory2() {
         },
         
     ];
-
-    // Toggle tables
-    const handleShowBoxes = () => {
-      setShowBoxes(true);
-      setShowMaterials(false);
-    };
-  
-    const handleShowMaterials = () => {
-      setShowMaterials(true);
-      setShowBoxes(false);
-    };
-  
-
     const materialColumn = [
       {
         field: 'delete',
@@ -152,7 +139,18 @@ export function Inventory2() {
         ),
       },
     ]
-  
+
+    // Toggle tables
+    const handleShowBoxes = () => {
+      setShowBoxes(true);
+      setShowMaterials(false);
+    };
+    const handleShowMaterials = () => {
+      setShowMaterials(true);
+      setShowBoxes(false);
+    };
+    
+    // fetch firestore data
     useEffect(() => {
       const fetchData = async () => {
         const data = await getDocs(boxesColRef);
@@ -174,9 +172,8 @@ export function Inventory2() {
       fetchMaterialData();
     }, []);
 
-
-
-    const isSmallScreen = window.innerWidth <= 1760;
+    // JSX depeding on screen size
+    const isSmallScreen = window.innerWidth <= 1260;
     // JSX depending on screen size
     const SmallScreen = () => (
           <div className="Row">
@@ -188,7 +185,7 @@ export function Inventory2() {
                 </Stack>
               </div>
               {showBoxes && (
-                <div style={{ height: 500, width: 420 }}>
+                <div style={{ height: 750, width: 420 }}>
                   <div>
                     <h1>
                       Boxes
@@ -197,13 +194,13 @@ export function Inventory2() {
                   <DataGrid
                     rows={rows}
                     columns={columns}
-                    pageSize={5}
+                    autoPageSize={true}
                     rowsPerPageOptions={[5]}
                   />
                 </div>
               )}
               {showMaterials && (
-                <div style={{ height: 500, width: 450 }}>
+                <div style={{ height: 600, width: 450 }}>
                 <div>
                     <h1>
                       Packing Materials
@@ -212,8 +209,8 @@ export function Inventory2() {
                   <DataGrid
                     rows={materialRows}
                     columns={materialColumn}
-                    pageSize={5}
-                    rowsPerPageOptions={[5]}
+                    pageSize={45}
+                    rowsPerPageOptions={[8]}
                   />
                 </div>
               )}
@@ -230,11 +227,11 @@ export function Inventory2() {
               Boxes
             </h1>
           </div>
-          <div style={{ height:500, width:450}}>
+          <div style={{ height:800, width:450}}>
             <DataGrid
               rows={rows}
               columns={columns}
-              pageSize={5}
+              autoPageSize={true}
               rowsPerPageOptions={[5]}
             />
           </div>
@@ -246,11 +243,11 @@ export function Inventory2() {
               Packing Materials
             </h1>
           </div>
-          <div style={{ height:500, width:450}}>
+          <div style={{ height:800, width:450}}>
             <DataGrid
               rows={materialRows}
               columns={materialColumn}
-              pageSize={5}
+              autoPageSize={true}
               rowsPerPageOptions={[5]}
             />
           </div>
