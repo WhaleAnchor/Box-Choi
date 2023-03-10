@@ -45,6 +45,22 @@ export function Inventory2() {
         window.location.reload(false);
     };
 
+    // Adding amount of a box
+    const addMat = async (id, amount) => {
+        const matDoc = doc(db, "materials", id);
+        const newFields = { materialCount: amount + 1 };
+        await updateDoc(matDoc, newFields);
+        window.location.reload(false);
+    };
+
+    // Subtracting amount of a box
+    const minusMat = async (id, amount) => {
+        const matDoc = doc(db, "materials", id);
+        const newFields = { materialCount: amount - 1 };
+        await updateDoc(matDoc, newFields);
+        window.location.reload(false);
+    };
+
     // Delete Materials
     const deleteMaterials = async (id) => {
       await deleteDoc(doc(db, "materials", id));
@@ -106,15 +122,35 @@ export function Inventory2() {
       {
         field: 'delete',
         headerName: '',
-        width: 60,
+        width: 30,
         renderCell: (params) => (
         <IconButton onClick={() => deleteMaterials(params.id)}>
             <DeleteIcon />
         </IconButton>
         ),
-    },
-      { field: 'materialName', headerName: 'Material Name', width: 200 },
-      { field: 'materialCount', headerName: 'Quantity', width: 150 },
+      },
+      { field: 'materialName', headerName: 'Material Name', width: 240 },
+      { field: 'materialCount', headerName: '#', width: 30 },
+      {
+        field: 'Add',
+        headerName: 'Add',
+        width: 30,
+        renderCell: (params) => (
+        <IconButton onClick={() => {addMat(params.id, params.row.materialCount) }}>
+            <AddIcon />
+        </IconButton>
+        ),
+      },
+      {
+        field: 'Delete',
+        headerName: 'Del',
+        width: 30,
+        renderCell: (params) => (
+            <IconButton onClick={() => {minusMat(params.id, params.row.materialCount) }}>
+            <RemoveIcon />
+            </IconButton>
+        ),
+      },
     ]
   
     useEffect(() => {

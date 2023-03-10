@@ -23,18 +23,37 @@ const Inventory = () => {
   const [newMaterialName, setnNewMaterialName] = useState([])
   const [newMaterialCount, setNewMaterialCount] = useState([])
 
+  // Helper function to check if input is an integer
+  const isInt = (value) => {
+    return /^\d+$/.test(value);
+  }
+
   // Adding new boxes
   const addBox = async (event) => {
     event.preventDefault();
-    // Add the new box to Firestore
-    await addDoc(boxesColRef, { boxlength: Number(newBoxLength), boxwidth: Number(newBoxWidth), boxheight: Number(newBoxHeight), boxprice: Number(newBoxPrice), boxquantity: Number(newBoxQuantity) });
-    window.location.reload(false);
-  };
+
+  // Check if inputs are integers
+  if (!isInt(newBoxLength) || !isInt(newBoxWidth) || !isInt(newBoxHeight) || !isInt(newBoxPrice) || !isInt(newBoxQuantity)) {
+    alert('Please use numbers when adding boxes ');
+    return;
+  }
+
+  // Add the new box to Firestore
+  await addDoc(boxesColRef, { boxlength: Number(newBoxLength), boxwidth: Number(newBoxWidth), boxheight: Number(newBoxHeight), boxprice: Number(newBoxPrice), boxquantity: Number(newBoxQuantity) });
+  window.location.reload(false);
+};
 
   const addMaterials = async (event) => {
     event.preventDefault();
+
+    // Check if input is an integer
+    if (!isInt(newMaterialCount)) {
+      alert('Please use numbers for the material count.');
+      return;
+    }
+
     // Add the new materials to Firestore
-    await addDoc(materialsColRef, { materialName: newMaterialName, materialCount: newMaterialCount});
+    await addDoc(materialsColRef, { materialName: newMaterialName, materialCount: Number(newMaterialCount)});
     window.location.reload(false);
   };
   
@@ -72,7 +91,7 @@ const Inventory = () => {
             <TextField id="outlined-basic" label="Name" variant="outlined" onChange={(event) => setnNewMaterialName(event.target.value)} />
           </Box>
           <Box component="form" sx={{ '& > :not(style)': { m: 1, width: '9ch' } }} noValidate autoComplete="off">
-            <TextField id="outlined-basic" label="Count" variant="outlined" onChange={(event) => setNewMaterialCount(event.target.value)} />
+            <TextField id="outlined-basic" label="Quantity" variant="outlined" onChange={(event) => setNewMaterialCount(event.target.value)} />
           </Box>
           <Stack spacing={2} direction="row">
             <Button variant="text" onClick={addMaterials}>Add Materials</Button>
