@@ -6,11 +6,15 @@ import "./InventoryPage.css";
 
 const InventoryPage = () => {
     return (
-        <>
-            <Navbar />
-            <Inventory />
-            <Inventory2 />
-        </>
+        <div className="InventoryPageWrapper">
+         <Navbar />
+            <div className='InventoryContentWrapper'>
+                <Inventory />   
+                <Inventory2 />
+            </div>
+           
+            
+        </div>
     )
 };
 
