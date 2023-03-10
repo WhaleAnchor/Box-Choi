@@ -146,10 +146,9 @@ export function Inventory2() {
           <div className="Row">
             <div className="firestoreBoxes">
               <div className="title">
-              <Stack spacing={2} direction="row">
-              <Button variant="outlined" onClick={handleShowBoxes}>Boxes</Button>
-              <Button variant="outlined" onClick={handleShowMaterials}> Packing Materials </Button>
-    
+                <Stack spacing={2} direction="row">
+                  <Button variant="outlined" onClick={handleShowBoxes}>Boxes</Button>
+                  <Button variant="outlined" onClick={handleShowMaterials}> Packing Materials </Button>
                 </Stack>
               </div>
               {showBoxes && (
