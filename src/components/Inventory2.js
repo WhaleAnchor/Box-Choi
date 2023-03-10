@@ -80,8 +80,8 @@ export function Inventory2() {
         },
         { field: 'boxlength', headerName: 'L', width: 30 },
         { field: 'boxwidth', headerName: 'W', width: 30 },
-        { field: 'boxheight', headerName: 'H', width: 60 },
-        { field: 'boxprice', headerName: 'Price', width: 60 },
+        { field: 'boxheight', headerName: 'H', width: 50 },
+        { field: 'boxprice', headerName: 'Price', width: 50 },
         { field: 'boxquantity', headerName: '#', width: 30 },
         {
             field: 'Add',
@@ -188,7 +188,7 @@ export function Inventory2() {
                 </Stack>
               </div>
               {showBoxes && (
-                <div style={{ height: 500, width: 450 }}>
+                <div style={{ height: 500, width: 420 }}>
                   <div>
                     <h1>
                       Boxes
