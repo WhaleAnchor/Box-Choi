@@ -34,7 +34,7 @@ h1 {
     justify-content: center;
     margin:20px;
     overflow:hidden;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 249, 249);
 }
 .title {
     text-align: center;
@@ -43,7 +43,6 @@ h1 {
     text-transform: uppercase;
     word-spacing: 1px; letter-spacing:2px;
 }
-
 
 @media (max-width: 1260px) {
     .Row {

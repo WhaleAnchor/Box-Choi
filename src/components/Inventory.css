@@ -20,13 +20,19 @@
     margin: 10px;
     overflow: hidden;
     background-color: white;
+
 }
 .inputFields {
     display: flex;
 }
 .css-e53awj-MuiStack-root {
-    background-color: white;
+    background-color: rgb(255, 249, 249);
 }
+
+.css-e53awj-MuiStack-root > button {
+    background-color: rgb(255, 255, 255);
+}
+
 @media (max-width: 600px) {
     .inventoryWrapper {
         display:flex;
