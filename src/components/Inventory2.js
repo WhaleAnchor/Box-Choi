@@ -84,7 +84,7 @@ export function Inventory2() {
   // Delete Materials
   const deleteMaterials = async (id) => {
     await deleteDoc(doc(db, "materials", id));
-    setMaterialRows(rows.filter((doc)=> doc.id !== id))
+    setMaterialRows(materialRows.filter((doc)=> doc.id !== id))
   }
 
   const columns = [
