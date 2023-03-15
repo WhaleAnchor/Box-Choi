@@ -14,7 +14,6 @@ import Button from '@mui/material/Button';
 
 
 export function Inventory2() {
-  const [tableData, setTableData] = useState([]);
   const boxesColRef = collection(db, "boxes");
   const materialColRef = collection(db, "materials");
   const [rows, setRows] = useState([]);
@@ -55,7 +54,22 @@ export function Inventory2() {
     setRows(formattedData);
   };
 
-  // Adding amount of a box
+  // Manual Update a box quantity
+  const updateBoxQuantity = async (id, quantity) => {
+    const boxDoc = doc(db, 'boxes', id);
+    const newFields = {boxquantity: quantity};
+    await updateDoc(boxDoc, newFields);
+
+    const data = await getDocs(boxesColRef);
+
+    const formattedData = data.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+    setRows(formattedData);
+  };
+
+  // Adding amount of a material
   const addMat = async (id, amount) => {
     const matDoc = doc(db, "materials", id);
     const newFields = { materialCount: amount + 1 };
@@ -68,7 +82,7 @@ export function Inventory2() {
     setMaterialRows(formattedData);
   };
 
-  // Subtracting amount of a box
+  // Subtracting amount of a material
   const minusMat = async (id, amount) => {
     const matDoc = doc(db, "materials", id);
     const newFields = { materialCount: amount - 1 };
@@ -81,10 +95,26 @@ export function Inventory2() {
     setMaterialRows(formattedData);
   };
 
+
   // Delete Materials
   const deleteMaterials = async (id) => {
     await deleteDoc(doc(db, "materials", id));
     setMaterialRows(materialRows.filter((doc)=> doc.id !== id))
+  };
+
+  // Manual Update a box quanitty
+  const updateMatQuantity = async (id, quantity) => {
+    const matDoc = doc(db, 'materials', id);
+    const newFields = {materialCount: quantity};
+    await updateDoc(matDoc, newFields);
+
+    const data = await getDocs(materialColRef);
+
+    const formattedData = data.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+    setMaterialRows(formattedData);
   }
 
   const columns = [
@@ -102,7 +132,21 @@ export function Inventory2() {
       { field: 'boxwidth', headerName: 'W', width: 30 },
       { field: 'boxheight', headerName: 'H', width: 50 },
       { field: 'boxprice', headerName: 'Price', width: 30 },
-      { field: 'boxquantity', headerName: '#', width: 30 },
+      {
+        field: 'boxquantity',
+        headerName: '#',
+        width: 30,
+        renderCell: (params) => (
+          <div onClick={() => {
+              const newQuantity = prompt(`Enter new quantity. Current quantity for ${params.row.boxlength}x${params.row.boxwidth}x${params.row.boxheight} is ${params.row.boxquantity}.`);
+              if (newQuantity) {
+                  updateBoxQuantity(params.id, parseInt(newQuantity));
+              }
+          }}>
+              {params.value}
+          </div>
+        )
+    },
       {
           field: 'Add',
           headerName: 'Add',
@@ -123,7 +167,6 @@ export function Inventory2() {
               </IconButton>
           ),
       },
-      
   ];
   const materialColumn = [
     {
@@ -137,7 +180,20 @@ export function Inventory2() {
       ),
     },
     { field: 'materialName', headerName: 'Material Name', width: 200 },
-    { field: 'materialCount', headerName: '#', width: 40 },
+    { field: 'materialCount',
+    headerName: '#',
+    width: 30,
+    renderCell: (params) => (
+      <div onClick={() => {
+        const newQuantity = prompt(`Enter new quantity. Current quantity for "${params.row.materialName}" is ${params.row.materialCount}.`);
+        if (newQuantity !== null) {
+          updateMatQuantity(params.id, parseInt(newQuantity));
+        }
+      }}>
+          {params.value}
+      </div>
+    )
+},
     {
       field: 'Add',
       headerName: 'Add',
