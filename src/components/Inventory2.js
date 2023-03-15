@@ -215,7 +215,7 @@ export function Inventory2() {
                   rows={rows}
                   columns={columns}
                   autoPageSize={true}
-                  rowsPerPageOptions={[5]}
+                  rowsPerPageOptions={[-1]}
                 />
               </div>
             )}
@@ -229,8 +229,8 @@ export function Inventory2() {
                 <DataGrid
                   rows={materialRows}
                   columns={materialColumn}
-                  pageSize={45}
-                  rowsPerPageOptions={[8]}
+                  pageSize={15}
+                  rowsPerPageOptions={[-1]}
                 />
               </div>
             )}
@@ -252,7 +252,7 @@ export function Inventory2() {
             rows={rows}
             columns={columns}
             autoPageSize={true}
-            rowsPerPageOptions={[5]}
+            rowsPerPageOptions={[-1]}
           />
         </div>
       </div>
@@ -268,7 +268,7 @@ export function Inventory2() {
             rows={materialRows}
             columns={materialColumn}
             autoPageSize={true}
-            rowsPerPageOptions={[5]}
+            rowsPerPageOptions={[-1]}
           />
         </div>
       </div>
