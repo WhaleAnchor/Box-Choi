@@ -21,14 +21,7 @@ export function Inventory2() {
   const [showBoxes, setShowBoxes] = useState(false);
   const [showMaterials, setShowMaterials] = useState(false);
 
-  // Deleting a box document
-  const deleteBox = async (id) => {
-  // Delete the box from Firestore
-      await deleteDoc(doc(db, "boxes", id));
-      setRows(rows.filter((doc)=> doc.id !== id))
-  };
-
-  // Adding amount of a box
+  // Increment amount of a box
   const addBox = async (id, amount) => {
     const boxDoc = doc(db, "boxes", id);
     const newFields = { boxquantity: amount + 1 };
@@ -40,8 +33,7 @@ export function Inventory2() {
     }));
     setRows(formattedData);
   };
-
-  // Subtracting amount of a box
+  // Decrement  amount of a box
   const minusBox = async (id, amount) => {
     const boxDoc = doc(db, "boxes", id);
     const newFields = { boxquantity: amount - 1 };
@@ -54,7 +46,14 @@ export function Inventory2() {
     setRows(formattedData);
   };
 
-  // Manual Update a box quantity
+  // Deleting a box document
+  const deleteBox = async (id) => {
+    // Delete the box from Firestore
+      await deleteDoc(doc(db, "boxes", id));
+      setRows(rows.filter((doc)=> doc.id !== id))
+  };
+
+  // Manually update a box's quantity
   const updateBoxQuantity = async (id, quantity) => {
     const boxDoc = doc(db, 'boxes', id);
     const newFields = {boxquantity: quantity};
@@ -69,7 +68,7 @@ export function Inventory2() {
     setRows(formattedData);
   };
 
-  // Adding amount of a material
+  // Increment a material's quantity
   const addMat = async (id, amount) => {
     const matDoc = doc(db, "materials", id);
     const newFields = { materialCount: amount + 1 };
@@ -82,7 +81,7 @@ export function Inventory2() {
     setMaterialRows(formattedData);
   };
 
-  // Subtracting amount of a material
+  // Decrement a material's quantity
   const minusMat = async (id, amount) => {
     const matDoc = doc(db, "materials", id);
     const newFields = { materialCount: amount - 1 };
@@ -102,7 +101,7 @@ export function Inventory2() {
     setMaterialRows(materialRows.filter((doc)=> doc.id !== id))
   };
 
-  // Manual Update a box quanitty
+  // Manually update a material's quanitty
   const updateMatQuantity = async (id, quantity) => {
     const matDoc = doc(db, 'materials', id);
     const newFields = {materialCount: quantity};
@@ -115,7 +114,7 @@ export function Inventory2() {
       ...doc.data(),
     }));
     setMaterialRows(formattedData);
-  }
+  };
 
   const columns = [
       {
@@ -138,12 +137,12 @@ export function Inventory2() {
         width: 30,
         renderCell: (params) => (
           <div onClick={() => {
-              const newQuantity = prompt(`Enter new quantity. Current quantity for ${params.row.boxlength}x${params.row.boxwidth}x${params.row.boxheight} is ${params.row.boxquantity}.`);
-              if (newQuantity) {
-                  updateBoxQuantity(params.id, parseInt(newQuantity));
-              }
+            const newQuantity = prompt(`Enter new quantity. Current quantity for ${params.row.boxlength}x${params.row.boxwidth}x${params.row.boxheight} is ${params.row.boxquantity}.`, params.value);
+            if (newQuantity !== null && newQuantity.trim() !== '' && /^\d+$/.test(newQuantity)) {
+              updateBoxQuantity(params.id, parseInt(newQuantity));
+            }
           }}>
-              {params.value}
+            {params.value}
           </div>
         )
     },
@@ -186,14 +185,14 @@ export function Inventory2() {
     renderCell: (params) => (
       <div onClick={() => {
         const newQuantity = prompt(`Enter new quantity. Current quantity for "${params.row.materialName}" is ${params.row.materialCount}.`);
-        if (newQuantity !== null) {
+        if (newQuantity !== null && newQuantity.trim() !== '' && /^\d+$/.test(newQuantity)) {
           updateMatQuantity(params.id, parseInt(newQuantity));
         }
       }}>
           {params.value}
       </div>
     )
-},
+    },
     {
       field: 'Add',
       headerName: 'Add',
