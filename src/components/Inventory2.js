@@ -184,7 +184,7 @@ export function Inventory2() {
     width: 30,
     renderCell: (params) => (
       <div onClick={() => {
-        const newQuantity = prompt(`Enter new quantity. Current quantity for "${params.row.materialName}" is ${params.row.materialCount}.`);
+        const newQuantity = Number(prompt(`Enter new quantity. Current quantity for "${params.row.materialName}" is ${params.row.materialCount}.`));
         if (newQuantity !== null && newQuantity.trim() !== '' && /^\d+$/.test(newQuantity)) {
           updateMatQuantity(params.id, parseInt(newQuantity));
         }
