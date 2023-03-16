@@ -36,6 +36,8 @@ This is a custom inventory management React single-page-application that is desi
 * The app utilizes Firebase to provide a cloud-based database, which can be accessed by all users of the app, providing real-time inventory updates.
 * With user authentication options, including email/password or Google account, only authorized personnel can access the app. Employees can easily check the current stock of each item, and the app provides an intuitive interface for adding or removing items as needed.
 * The cloud-based database ensures that all users have access to the most up-to-date inventory information, making it easier to manage the store and keep customers happy.
+* The app is perfectly user-friendly on mobile for practical use.
+* The inventory management was tested over a period of two weeks with success. Some features were added during testing such as manual quantity inputs.
 * The deployed link on Heroku is a clone of the application we are using personally. There is no user restrictions on this deployed app so feel free to sign up with an email/password or through Google and try it for yourself!
 
 ![Box-Choi](assets/screenshot1.png "Image of Inventory Page") 
