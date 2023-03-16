@@ -133,7 +133,7 @@ export function Inventory2() {
       { field: 'boxprice', headerName: 'Price', width: 30 },
       {
         field: 'boxquantity',
-        headerName: '#',
+        headerName: '#*',
         width: 30,
         renderCell: (params) => (
           <div onClick={() => {
@@ -180,7 +180,7 @@ export function Inventory2() {
     },
     { field: 'materialName', headerName: 'Material Name', width: 200 },
     { field: 'materialCount',
-    headerName: '#',
+    headerName: '#*',
     width: 30,
     renderCell: (params) => (
       <div onClick={() => {
@@ -331,8 +331,11 @@ export function Inventory2() {
   );
 
   return (
-    <div>
+    <div className="tableWrapper">
       {isSmallScreen ? <SmallScreen /> : < RegularScreen/>}
+      <h3 className="userHint">
+        * You may click the quantity in each row to manually input the quantity. *
+      </h3>
     </div>
   );
 };
