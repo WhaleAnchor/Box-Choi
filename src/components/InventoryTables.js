@@ -21,6 +21,20 @@ export function InventoryTables() {
   const [showBoxes, setShowBoxes] = useState(false);
   const [showMaterials, setShowMaterials] = useState(false);
 
+  // state for table sorting
+  const [sortModel, setSortModel] = useState([
+    {
+      field: "boxlength",
+      sort: "asc"
+    },
+  ]);
+  const [matSortModel, setMatSortModel] = useState([
+    {
+      field: "materialName",
+      sort: "asc"
+    },
+  ]);
+
   // Increment amount of a box
   const addBox = async (id, amount) => {
     const boxDoc = doc(db, "boxes", id);
@@ -249,6 +263,7 @@ export function InventoryTables() {
 
   // JSX depeding on screen size
   const isSmallScreen = window.innerWidth <= 1260;
+
   // JSX depending on screen size
   const SmallScreen = () => (
         <div className="Row">
@@ -270,6 +285,8 @@ export function InventoryTables() {
                   rows={rows}
                   columns={columns}
                   rowsPerPageOptions={[-1]}
+                  sortModel={sortModel}
+                  onSortModelChange={(model) => setSortModel(model)}
                 />
               </div>
             )}
@@ -284,6 +301,8 @@ export function InventoryTables() {
                   rows={materialRows}
                   columns={materialColumn}
                   rowsPerPageOptions={[-1]}
+                  sortModel={matSortModel}
+                  onSortModelChange={(model) => setMatSortModel(model)}
                 />
               </div>
             )}
@@ -305,6 +324,8 @@ export function InventoryTables() {
             rows={rows}
             columns={columns}
             rowsPerPageOptions={[-1]}
+            sortModel={sortModel}
+            onSortModelChange={(model) => setSortModel(model)}
           />
         </div>
       </div>
@@ -320,6 +341,8 @@ export function InventoryTables() {
             rows={materialRows}
             columns={materialColumn}
             rowsPerPageOptions={[-1]}
+            sortModel={matSortModel}
+            onSortModelChange={(model) => setMatSortModel(model)}
           />
         </div>
       </div>
