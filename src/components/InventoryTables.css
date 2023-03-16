@@ -26,6 +26,7 @@ h1 {
     margin:15px;
     justify-content: center;
     align-items: center;
+    height:100%;
 }
 .firestoreBoxes {
     display:flex;
@@ -33,7 +34,8 @@ h1 {
     align-items: center;
     justify-content: center;
     margin:20px;
-    overflow:scroll;
+    height:100%;
+    overflow:hidden;
     overflow-x: hidden;
     background-color: rgb(255, 252, 252);
     border-radius: 10px;
@@ -45,7 +47,6 @@ h1 {
     text-transform: uppercase;
     word-spacing: 1px; letter-spacing:2px;
 }
-
 .tableWrapper {
     display: flex;
     justify-content: center;
@@ -59,6 +60,7 @@ h1 {
     padding: 5px;
     margin:0px
 }
+
 
 @media (max-width: 1260px) {
     .Row {
@@ -80,7 +82,7 @@ h1 {
         align-self: left;
         margin:10px;
         width:100%;
-        overflow:scroll;
+        overflow:hidden;
         overflow-x: hidden;
     }
     .userHint {
