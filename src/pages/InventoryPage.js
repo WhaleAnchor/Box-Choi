@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import Inventory from '../components/Inventory';
-import { Inventory2 } from '../components/Inventory2';
+import InventoryAdd from '../components/InventoryAdd';
+import { InventoryTables } from '../components/InventoryTables';
 import "./InventoryPage.css";
 
 const InventoryPage = () => {
@@ -9,8 +9,8 @@ const InventoryPage = () => {
         <div className="InventoryPageWrapper">
             <Navbar />
             <div className='InventoryContentWrapper'>
-                <Inventory />   
-                <Inventory2 />
+                <InventoryAdd />   
+                <InventoryTables />
             </div>
         </div>
     )
