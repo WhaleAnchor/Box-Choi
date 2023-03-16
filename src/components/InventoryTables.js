@@ -260,7 +260,7 @@ export function InventoryTables() {
               </Stack>
             </div>
             {showBoxes && (
-              <div style={{ height: 600, width: 410 }}>
+              <div style={{ height: 500, width: 410 }}>
                 <div>
                   <h1>
                     Boxes
@@ -269,13 +269,13 @@ export function InventoryTables() {
                 <DataGrid
                   rows={rows}
                   columns={columns}
-                  autoPageSize={-1}
+                  autoPageSize={true}
                   rowsPerPageOptions={[-1]}
                 />
               </div>
             )}
             {showMaterials && (
-              <div style={{ height: 600, width: 410 }}>
+              <div style={{ height: 500, width: 410 }}>
               <div>
                   <h1>
                     Packing Materials
@@ -284,7 +284,7 @@ export function InventoryTables() {
                 <DataGrid
                   rows={materialRows}
                   columns={materialColumn}
-                  pageSize={15}
+                  autoPageSize={true}
                   rowsPerPageOptions={[-1]}
                 />
               </div>
@@ -302,7 +302,7 @@ export function InventoryTables() {
             Boxes
           </h1>
         </div>
-        <div style={{ height:600, width:450}}>
+        <div style={{ height:500, width:450}}>
           <DataGrid
             rows={rows}
             columns={columns}
@@ -318,7 +318,7 @@ export function InventoryTables() {
             Packing Materials
           </h1>
         </div>
-        <div style={{ height:600, width:450}}>
+        <div style={{ height:500, width:450}}>
           <DataGrid
             rows={materialRows}
             columns={materialColumn}
