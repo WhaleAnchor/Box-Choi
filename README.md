@@ -43,7 +43,7 @@ This is a custom inventory management React single-page-application that is desi
 
 ![Box-Choi](assets/screenshot2.png "Image of Login Page") 
 
-![Box-Choi](assets\screenshot4.png "Image of Firebase Database") 
+![Box-Choi](assets/screenshot4.png "Image of Firebase Database") 
 
 Here is a link to the repo: <a href="https://github.com/WhaleAnchor/Box-Choy">BoxChoi</a>
 
