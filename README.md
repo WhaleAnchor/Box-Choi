@@ -9,14 +9,14 @@
 <p align="center">
     A customized inventory web application for our family business.
     <br />
-    <a href="https://github.com/WhaleAnchor/Box-Choy"><strong> Go to the GitHub Repository »</strong></a>
+    <a href="https://github.com/WhaleAnchor/Box-Choi"><strong> Go to the GitHub Repository »</strong></a>
     <br />
     <br />
     <a href="https://boxchoi.herokuapp.com/">Deployed on Heroku</a>
     ·
-    <a href="https://github.com/WhaleAnchor/Box-Choy/issues">Report Bug</a>
+    <a href="https://github.com/WhaleAnchor/Box-Choi/issues">Report Bug</a>
     ·
-    <a href="https://github.com/WhaleAnchor/Box-Choy/issues">Request Feature</a>
+    <a href="https://github.com/WhaleAnchor/Box-Choi/issues">Request Feature</a>
   </p>
 </div>
 
@@ -44,7 +44,7 @@ This is a custom inventory management React single-page-application that is desi
 
 ![Box-Choi](assets/screenshot2.png "Image of Login Page") 
 
-Here is a link to the repo: <a href="https://github.com/WhaleAnchor/Box-Choy">BoxChoi</a>
+Here is a link to the repo: <a href="https://github.com/WhaleAnchor/Box-Choi">BoxChoi</a>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -64,7 +64,7 @@ Here is a link to the repo: <a href="https://github.com/WhaleAnchor/Box-Choy">Bo
 
 1. Clone the repo.
     ```sh
-    git clone git@github.com:WhaleAnchor/Box-Choy.git
+    git clone git@github.com:WhaleAnchor/Box-Choi.git
     ```
 2. Download the dependencies.
    ```sh
@@ -102,7 +102,7 @@ Distributed under the MIT License.
 
 Andrew Choi - https://github.com/WhaleAnchor
 
-Project Link: [https://github.com/WhaleAnchor/Box-Choy](https://github.com/WhaleAnchor/Box-Choy)
+Project Link: [https://github.com/WhaleAnchor/Box-Choi](https://github.com/WhaleAnchor/Box-Choi)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
