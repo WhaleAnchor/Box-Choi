@@ -58,6 +58,7 @@ h1 {
     padding: 5px;
     margin:0px
 }
+
 @media (max-width: 1260px) {
     .Row {
         display:flex;
@@ -80,5 +81,13 @@ h1 {
         width:100%;
         overflow:hidden;
     }
+    .userHint {
+    border: 1px solid black;
+    background-color: rgb(255, 252, 252);
+    border-radius: 10px;
+    padding: 5px;
+    margin:0px;
+    font-size: 11px;
+}
 
 }

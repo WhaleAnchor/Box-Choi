@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { doc, collection, getDocs, addDoc, updateDoc, deleteDoc } from "firebase/firestore";
 import {db} from "../firebase/firebase";
-import "./Inventory2.css"
+import "./InventoryTables.css"
 
 // material ui imports
 import { DataGrid } from '@mui/x-data-grid';
@@ -13,7 +13,7 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 
 
-export function Inventory2() {
+export function InventoryTables() {
   const boxesColRef = collection(db, "boxes");
   const materialColRef = collection(db, "materials");
   const [rows, setRows] = useState([]);
@@ -340,4 +340,4 @@ export function Inventory2() {
   );
 };
 
-  export default Inventory2;
+  export default InventoryTables;

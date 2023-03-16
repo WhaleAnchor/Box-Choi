@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { doc, collection, getDocs, addDoc, updateDoc, deleteDoc } from "firebase/firestore";
 import {db} from "../firebase/firebase";
-import './Inventory.css'
+import './InventoryAdd.css'
 
 // material ui imports
 import { useTheme } from '@mui/material/styles';
