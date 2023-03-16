@@ -11,7 +11,7 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 
-const Inventory = () => {
+const InventoryAdd = () => {
   const boxesColRef = collection(db, "boxes");
   const materialsColRef = collection(db, "materials");
 
@@ -121,4 +121,4 @@ const Inventory = () => {
   );
 };
 
-export default Inventory;
+export default InventoryAdd;
