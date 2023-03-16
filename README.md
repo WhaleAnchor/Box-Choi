@@ -1,70 +1,126 @@
-# Getting Started with Create React App
+<div id="top"></div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Contributors][contributors-shield]][contributors-url]
 
-## Available Scripts
+[![MIT License][license-shield]][license-url]
 
-In the project directory, you can run:
+<div>
+<h2 align="center">Box Choi</h2>
+<p align="center">
+    A customized inventory web application for our family business.
+    <br />
+    <a href="https://github.com/WhaleAnchor/Box-Choy"><strong> Go to the GitHub Repository »</strong></a>
+    <br />
+    <br />
+    <a href="https://boxchoi.herokuapp.com/">Deployed on Heroku</a>
+    ·
+    <a href="https://github.com/WhaleAnchor/Box-Choy/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/WhaleAnchor/Box-Choy/issues">Request Feature</a>
+  </p>
+</div>
 
-### `npm start`
+## Table of Contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<li><a href="#about-the-project">About the Project</a></li>
+<li><a href="#built-with">Built With</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#license">License</a></li>
+<li><a href="#contact">Contact</a></li>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## About The Project
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This is a custom inventory management React single-page-application that is designed to solve the common problem of running out of items in my family store. With this app, our family store can say goodbye to the inconvenience and stress of running out of essential items. 
+* The app utilizes Firebase to provide a cloud-based database, which can be accessed by all users of the app, providing real-time inventory updates.
+* With user authentication options, including email/password or Google account, only authorized personnel can access the app. Employees can easily check the current stock of each item, and the app provides an intuitive interface for adding or removing items as needed.
+* The cloud-based database ensures that all users have access to the most up-to-date inventory information, making it easier to manage the store and keep customers happy.
+* The deployed link on Heroku is a clone of the application we are using personally. There is no user restrictions on this deployed app so feel free to sign up with an email/password or through Google and try it for yourself!
 
-### `npm run build`
+![Box-Choi](assets\screenshot1.png "Image of Inventory Page") 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Box-Choi](assets\screenshot2.png "Image of Login Page") 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Here is a link to the repo: <a href="https://github.com/WhaleAnchor/Box-Choy">BoxChoi</a>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### `npm run eject`
+### Built With
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+[![React][react-shield]][react-url]
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[![NodeJS][nodejs-shield]][nodejs-url]
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+[![Firebase][firebase-shield]][firebase-url]
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+[![Materialui][materialui-shield]][materialui-url]
 
-## Learn More
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Installation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Clone the repo.
+    ```sh
+    git clone git@github.com:WhaleAnchor/Box-Choy.git
+    ```
+2. Download the dependencies.
+   ```sh
+    npm i
+   ```
+3. Run the locally.
+    ```sh
+    npm run start
+    ```
+4. Make an account.
+    ```sh
+    Use email/password or Google account.
+    ```
 
-### Code Splitting
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Usage
 
-### Analyzing the Bundle Size
+If you want to try using the website:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Head over to the deployed website on Heroku!
+   ```sh
+   https://boxchoi.herokuapp.com/
+   ```
 
-### Making a Progressive Web App
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## License
 
-### Advanced Configuration
+Distributed under the MIT License.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### Deployment
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Andrew Choi - https://github.com/WhaleAnchor
 
-### `npm run build` fails to minify
+Project Link: [https://github.com/WhaleAnchor/Box-Choy](https://github.com/WhaleAnchor/Box-Choy)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- Markdown links -->
+[contributors-shield]:https://img.shields.io/github/contributors/WhaleAnchor/Tech-Blog.svg?style=for-the-badge
+[contributors-url]:https://github.com/WhaleAnchor/Tech-Blog/graphs/contributors
+
+[license-shield]:https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-url]:https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
+
+[react-shield]:https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[react-url]:https://react.dev/reference/react
+
+[nodejs-shield]:https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white
+[nodejs-url]: https://nodejs.org/en/
+
+[firebase-shield]:https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black
+[firebase-url]:https://firebase.google.com/docs
+
+[materialui-shield]:https://img.shields.io/badge/Material%20UI-007FFF?style=for-the-badge&logo=mui&logoColor=white
+[materialui-url]:https://mui.com/material-ui/getting-started/overview/
+
+
