@@ -12,7 +12,7 @@
     <a href="https://github.com/WhaleAnchor/Box-Choi"><strong> Go to the GitHub Repository »</strong></a>
     <br />
     <br />
-    <a href="https://boxchoisample.herokuapp.com/">Deployed on Heroku</a>
+    <a href="https://box-choi.onrender.com/">Deployed on Render</a>
     ·
     <a href="https://github.com/WhaleAnchor/Box-Choi/issues">Report Bug</a>
     ·
@@ -37,7 +37,7 @@ This is a custom inventory management React single-page-application that is desi
 * With user authentication options, including email/password or Google account, only authorized personnel can access the app. Employees can easily check the current stock of each item, and the app provides an intuitive interface for adding or removing items as needed.
 * The cloud-based database ensures that all users have access to the most up-to-date inventory information, making it easier to manage the store and keep customers happy.
 * The app is perfectly user-friendly on mobile for practical use.
-* The deployed link on Heroku is a clone of the application we are using personally. There is no user restrictions on this deployed app so feel free to sign up with an email/password or through Google and try it for yourself!
+* The deployed link on Render is a clone of the application we are using personally. There is no user restrictions on this deployed app so feel free to sign up with an email/password or through Google and try it for yourself!
 
 ![Box-Choi](assets/screenshot1.png "Image of Inventory Page") 
 
@@ -86,9 +86,9 @@ Here is a link to the repo: <a href="https://github.com/WhaleAnchor/Box-Choi">Bo
 
 If you want to try using the website:
 
-1. Head over to the deployed website on Heroku!
+1. Head over to the deployed website on Render!
    ```sh
-   https://boxchoisample.herokuapp.com/
+   https://box-choi.onrender.com/
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
