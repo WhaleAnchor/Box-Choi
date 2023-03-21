@@ -12,7 +12,7 @@
     <a href="https://github.com/WhaleAnchor/Box-Choi"><strong> Go to the GitHub Repository »</strong></a>
     <br />
     <br />
-    <a href="https://boxchoi.herokuapp.com/">Deployed on Heroku</a>
+    <a href="https://boxchoisample.herokuapp.com/">Deployed on Heroku</a>
     ·
     <a href="https://github.com/WhaleAnchor/Box-Choi/issues">Report Bug</a>
     ·
@@ -45,7 +45,7 @@ This is a custom inventory management React single-page-application that is desi
 
 ![Box-Choi](assets/screenshot4.png "Image of Firebase Database") 
 
-Here is a link to the repo: <a href="https://github.com/WhaleAnchor/Box-Choy">BoxChoi</a>
+Here is a link to the repo: <a href="https://github.com/WhaleAnchor/Box-Choi">BoxChoi</a>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -88,7 +88,7 @@ If you want to try using the website:
 
 1. Head over to the deployed website on Heroku!
    ```sh
-   https://boxchoi.herokuapp.com/
+   https://boxchoisample.herokuapp.com/
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
