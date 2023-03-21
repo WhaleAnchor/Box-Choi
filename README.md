@@ -12,7 +12,7 @@
     <a href="https://github.com/WhaleAnchor/Box-Choi"><strong> Go to the GitHub Repository »</strong></a>
     <br />
     <br />
-    <a href="https://boxchoisample.herokuapp.com/">Deployed on Heroku</a>
+    <a href="https://box-choi.onrender.com/">Deployed on Render</a>
     ·
     <a href="https://github.com/WhaleAnchor/Box-Choi/issues">Report Bug</a>
     ·
@@ -86,9 +86,9 @@ Here is a link to the repo: <a href="https://github.com/WhaleAnchor/Box-Choi">Bo
 
 If you want to try using the website:
 
-1. Head over to the deployed website on Heroku!
+1. Head over to the deployed website on Render!
    ```sh
-   https://boxchoisample.herokuapp.com/
+   https://box-choi.onrender.com/
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
