@@ -43,7 +43,7 @@ const InventoryAdd = () => {
 
   // Add the new box to Firestore
   await addDoc(boxesColRef, { boxlength: Number(newBoxLength), boxwidth: Number(newBoxWidth), boxheight: Number(newBoxHeight), boxprice: Number(newBoxPrice), boxquantity: Number(newBoxQuantity) });
-  window.location.reload(false);
+  window.location.replace('/');
 };
 
   const addMaterials = async (event) => {
@@ -57,7 +57,7 @@ const InventoryAdd = () => {
 
     // Add the new materials to Firestore
     await addDoc(materialsColRef, { materialName: newMaterialName, materialCount: Number(newMaterialCount)});
-    window.location.reload(false);
+    window.location.replace('/');
   };
   
   // Toggle input tables
