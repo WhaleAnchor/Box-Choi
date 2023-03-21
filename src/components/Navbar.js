@@ -71,7 +71,7 @@ function Navbar() {
           {/* Inventory */}
           <Box sx={{ flexGrow: 0 }}>
             <Typography title="Open settings">
-              <Button href="./inventory" sx={{ my: 2, color: 'white', display: 'block'  }}>
+              <Button href="./" sx={{ my: 2, color: 'white', display: 'block'  }}>
                 Inventory
               </Button>
             </Typography>
