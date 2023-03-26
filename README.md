@@ -108,8 +108,8 @@ Project Link: [https://github.com/WhaleAnchor/Box-Choi](https://github.com/Whale
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- Markdown links -->
-[contributors-shield]:https://img.shields.io/github/contributors/WhaleAnchor/Tech-Blog.svg?style=for-the-badge
-[contributors-url]:https://github.com/WhaleAnchor/Tech-Blog/graphs/contributors
+[contributors-shield]:https://img.shields.io/github/contributors/WhaleAnchor/Box-Choi.svg?style=for-the-badge
+[contributors-url]:https://github.com/WhaleAnchor/Box-Choi/graphs/contributors
 
 [license-shield]:https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
 [license-url]:https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
